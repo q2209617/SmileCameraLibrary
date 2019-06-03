@@ -23,14 +23,15 @@ import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.widget.ImageView;
 
-import com.cjt2325.cameralibrary.listener.ErrorListener;
-import com.cjt2325.cameralibrary.util.AngleUtil;
-import com.cjt2325.cameralibrary.util.CameraParamUtil;
-import com.cjt2325.cameralibrary.util.CheckPermission;
-import com.cjt2325.cameralibrary.util.DeviceUtil;
-import com.cjt2325.cameralibrary.util.FileUtil;
-import com.cjt2325.cameralibrary.util.LogUtil;
-import com.cjt2325.cameralibrary.util.ScreenUtils;
+
+import com.tdx.smilecamera.listener.ErrorListener;
+import com.tdx.smilecamera.util.AngleUtil;
+import com.tdx.smilecamera.util.CameraParamUtil;
+import com.tdx.smilecamera.util.CheckPermission;
+import com.tdx.smilecamera.util.DeviceUtil;
+import com.tdx.smilecamera.util.FileUtil;
+import com.tdx.smilecamera.util.LogUtil;
+import com.tdx.smilecamera.util.ScreenUtils;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

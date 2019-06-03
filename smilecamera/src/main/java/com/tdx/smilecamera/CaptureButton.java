@@ -12,13 +12,13 @@ import android.os.CountDownTimer;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.cjt2325.cameralibrary.listener.CaptureListener;
-import com.cjt2325.cameralibrary.util.CheckPermission;
-import com.cjt2325.cameralibrary.util.LogUtil;
+import com.tdx.smilecamera.listener.CaptureListener;
+import com.tdx.smilecamera.util.CheckPermission;
+import com.tdx.smilecamera.util.LogUtil;
 
-import static com.cjt2325.cameralibrary.JCameraView.BUTTON_STATE_BOTH;
-import static com.cjt2325.cameralibrary.JCameraView.BUTTON_STATE_ONLY_CAPTURE;
-import static com.cjt2325.cameralibrary.JCameraView.BUTTON_STATE_ONLY_RECORDER;
+import static com.tdx.smilecamera.JCameraView.BUTTON_STATE_BOTH;
+import static com.tdx.smilecamera.JCameraView.BUTTON_STATE_ONLY_CAPTURE;
+import static com.tdx.smilecamera.JCameraView.BUTTON_STATE_ONLY_RECORDER;
 
 
 /**

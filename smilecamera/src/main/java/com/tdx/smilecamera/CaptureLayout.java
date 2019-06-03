@@ -16,10 +16,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.cjt2325.cameralibrary.listener.CaptureListener;
-import com.cjt2325.cameralibrary.listener.ClickListener;
-import com.cjt2325.cameralibrary.listener.ReturnListener;
-import com.cjt2325.cameralibrary.listener.TypeListener;
+import com.tdx.smilecamera.listener.CaptureListener;
+import com.tdx.smilecamera.listener.ClickListener;
+import com.tdx.smilecamera.listener.ReturnListener;
+import com.tdx.smilecamera.listener.TypeListener;
 
 
 /**

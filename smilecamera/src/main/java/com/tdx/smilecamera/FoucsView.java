@@ -7,7 +7,8 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.cjt2325.cameralibrary.util.ScreenUtils;
+import com.tdx.smilecamera.util.ScreenUtils;
+
 
 /**
  * =====================================

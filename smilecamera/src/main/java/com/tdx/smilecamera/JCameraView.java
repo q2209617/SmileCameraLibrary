@@ -22,16 +22,17 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.VideoView;
 
-import com.cjt2325.cameralibrary.listener.CaptureListener;
-import com.cjt2325.cameralibrary.listener.ClickListener;
-import com.cjt2325.cameralibrary.listener.ErrorListener;
-import com.cjt2325.cameralibrary.listener.JCameraListener;
-import com.cjt2325.cameralibrary.listener.TypeListener;
-import com.cjt2325.cameralibrary.state.CameraMachine;
-import com.cjt2325.cameralibrary.util.FileUtil;
-import com.cjt2325.cameralibrary.util.LogUtil;
-import com.cjt2325.cameralibrary.util.ScreenUtils;
-import com.cjt2325.cameralibrary.view.CameraView;
+
+import com.tdx.smilecamera.listener.CaptureListener;
+import com.tdx.smilecamera.listener.ClickListener;
+import com.tdx.smilecamera.listener.ErrorListener;
+import com.tdx.smilecamera.listener.JCameraListener;
+import com.tdx.smilecamera.listener.TypeListener;
+import com.tdx.smilecamera.state.CameraMachine;
+import com.tdx.smilecamera.util.FileUtil;
+import com.tdx.smilecamera.util.LogUtil;
+import com.tdx.smilecamera.util.ScreenUtils;
+import com.tdx.smilecamera.view.CameraView;
 
 import java.io.IOException;
 
