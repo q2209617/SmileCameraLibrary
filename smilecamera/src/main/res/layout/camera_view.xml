@@ -47,14 +47,14 @@
     </LinearLayout>
 
 
-    <com.cjt2325.cameralibrary.CaptureLayout
+    <com.tdx.smilecamera.CaptureLayout
         android:id="@+id/capture_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#000000"
         android:layout_gravity="bottom"/>
 
-    <com.cjt2325.cameralibrary.FoucsView
+    <com.tdx.smilecamera.FoucsView
         android:id="@+id/fouce_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
