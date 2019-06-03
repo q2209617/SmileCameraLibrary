@@ -31,7 +31,7 @@ import com.tdx.smilecamera.listener.TypeListener;
  * =====================================
  */
 
-public class CaptureLayout extends FrameLayout {
+public class SmileCaptureLayout extends FrameLayout {
 
     private CaptureListener captureLisenter;    //拍照按钮监听
     private TypeListener typeLisenter;          //拍照或录制后接结果按钮监听
@@ -67,15 +67,15 @@ public class CaptureLayout extends FrameLayout {
 
     private boolean isFirst = true;
 
-    public CaptureLayout(Context context) {
+    public SmileCaptureLayout(Context context) {
         this(context, null);
     }
 
-    public CaptureLayout(Context context, AttributeSet attrs) {
+    public SmileCaptureLayout(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public CaptureLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+    public SmileCaptureLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
         WindowManager manager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);

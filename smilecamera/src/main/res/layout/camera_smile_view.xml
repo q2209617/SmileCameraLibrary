@@ -47,8 +47,8 @@
     </LinearLayout>
 
 
-    <com.tdx.smilecamera.CaptureLayout
-        android:id="@+id/capture_layout"
+    <com.tdx.smilecamera.SmileCaptureLayout
+        android:id="@+id/smile_capture_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#000000"

@@ -89,7 +89,7 @@ public class JCameraView extends FrameLayout implements CameraInterface.CameraOp
     private ImageView mPhoto;
     private ImageView mSwitchCamera;
     private ImageView mFlashLamp;
-    private CaptureLayout mCaptureLayout;
+    private SmileCaptureLayout mSmileCaptureLayout;
     private FoucsView mFoucsView;
     private MediaPlayer mMediaPlayer;
 
@@ -151,7 +151,7 @@ public class JCameraView extends FrameLayout implements CameraInterface.CameraOp
 
     private void initView() {
         setWillNotDraw(false);
-        View view = LayoutInflater.from(mContext).inflate(R.layout.camera_view, this);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.camera_smile_view, this);
         mVideoView = (VideoView) view.findViewById(R.id.video_preview);
         mPhoto = (ImageView) view.findViewById(R.id.image_photo);
         mSwitchCamera = (ImageView) view.findViewById(R.id.image_switch);
@@ -167,9 +167,9 @@ public class JCameraView extends FrameLayout implements CameraInterface.CameraOp
                 setFlashRes();
             }
         });
-        mCaptureLayout = (CaptureLayout) view.findViewById(R.id.capture_layout);
-        mCaptureLayout.setDuration(duration);
-        mCaptureLayout.setIconSrc(iconLeft, iconRight);
+        mSmileCaptureLayout = (SmileCaptureLayout) view.findViewById(R.id.smile_capture_layout);
+        mSmileCaptureLayout.setDuration(duration);
+        mSmileCaptureLayout.setIconSrc(iconLeft, iconRight);
         mFoucsView = (FoucsView) view.findViewById(R.id.fouce_view);
         mVideoView.getHolder().addCallback(this);
         machine.swtich(mVideoView.getHolder(), screenProp);
@@ -181,7 +181,7 @@ public class JCameraView extends FrameLayout implements CameraInterface.CameraOp
             }
         });
         //拍照 录像
-        mCaptureLayout.setCaptureLisenter(new CaptureListener() {
+        mSmileCaptureLayout.setCaptureLisenter(new CaptureListener() {
             @Override
             public void takePictures() {
                 mSwitchCamera.setVisibility(INVISIBLE);
@@ -198,7 +198,7 @@ public class JCameraView extends FrameLayout implements CameraInterface.CameraOp
 
             @Override
             public void recordShort(final long time) {
-                mCaptureLayout.setTextWithAnimation("录制时间过短");
+                mSmileCaptureLayout.setTextWithAnimation("录制时间过短");
                 mSwitchCamera.setVisibility(VISIBLE);
                 mFlashLamp.setVisibility(VISIBLE);
                 postDelayed(new Runnable() {
@@ -228,7 +228,7 @@ public class JCameraView extends FrameLayout implements CameraInterface.CameraOp
             }
         });
         //确认 取消
-        mCaptureLayout.setTypeLisenter(new TypeListener() {
+        mSmileCaptureLayout.setTypeLisenter(new TypeListener() {
             @Override
             public void cancel() {
                 machine.cancle(mVideoView.getHolder(), screenProp);
@@ -248,7 +248,7 @@ public class JCameraView extends FrameLayout implements CameraInterface.CameraOp
 //                }
 //            }
 //        });
-        mCaptureLayout.setLeftClickListener(new ClickListener() {
+        mSmileCaptureLayout.setLeftClickListener(new ClickListener() {
             @Override
             public void onClick() {
                 if (leftClickListener != null) {
@@ -256,7 +256,7 @@ public class JCameraView extends FrameLayout implements CameraInterface.CameraOp
                 }
             }
         });
-        mCaptureLayout.setRightClickListener(new ClickListener() {
+        mSmileCaptureLayout.setRightClickListener(new ClickListener() {
             @Override
             public void onClick() {
                 if (rightClickListener != null) {
@@ -411,7 +411,7 @@ public class JCameraView extends FrameLayout implements CameraInterface.CameraOp
 
     //设置CaptureButton功能（拍照和录像）
     public void setFeatures(int state) {
-        this.mCaptureLayout.setButtonFeatures(state);
+        this.mSmileCaptureLayout.setButtonFeatures(state);
     }
 
     //设置录制质量
@@ -440,7 +440,7 @@ public class JCameraView extends FrameLayout implements CameraInterface.CameraOp
         }
         mSwitchCamera.setVisibility(VISIBLE);
 //        mFlashLamp.setVisibility(VISIBLE);
-        mCaptureLayout.resetCaptureLayout();
+        mSmileCaptureLayout.resetCaptureLayout();
     }
 
     @Override
@@ -465,7 +465,7 @@ public class JCameraView extends FrameLayout implements CameraInterface.CameraOp
             case TYPE_DEFAULT:
                 break;
         }
-        mCaptureLayout.resetCaptureLayout();
+        mSmileCaptureLayout.resetCaptureLayout();
     }
 
     @Override
@@ -478,8 +478,8 @@ public class JCameraView extends FrameLayout implements CameraInterface.CameraOp
         captureBitmap = bitmap;
         mPhoto.setImageBitmap(bitmap);
         mPhoto.setVisibility(VISIBLE);
-        mCaptureLayout.startAlphaAnimation();
-        mCaptureLayout.startTypeBtnAnimator();
+        mSmileCaptureLayout.startAlphaAnimation();
+        mSmileCaptureLayout.startTypeBtnAnimator();
     }
 
     @Override
@@ -535,7 +535,7 @@ public class JCameraView extends FrameLayout implements CameraInterface.CameraOp
 
     @Override
     public void setTip(String tip) {
-        mCaptureLayout.setTip(tip);
+        mSmileCaptureLayout.setTip(tip);
     }
 
     @Override
@@ -546,7 +546,7 @@ public class JCameraView extends FrameLayout implements CameraInterface.CameraOp
 
     @Override
     public boolean handlerFoucs(float x, float y) {
-        if (y > mCaptureLayout.getTop()) {
+        if (y > mSmileCaptureLayout.getTop()) {
             return false;
         }
         mFoucsView.setVisibility(VISIBLE);
@@ -559,8 +559,8 @@ public class JCameraView extends FrameLayout implements CameraInterface.CameraOp
         if (y < mFoucsView.getWidth() / 2) {
             y = mFoucsView.getWidth() / 2;
         }
-        if (y > mCaptureLayout.getTop() - mFoucsView.getWidth() / 2) {
-            y = mCaptureLayout.getTop() - mFoucsView.getWidth() / 2;
+        if (y > mSmileCaptureLayout.getTop() - mFoucsView.getWidth() / 2) {
+            y = mSmileCaptureLayout.getTop() - mFoucsView.getWidth() / 2;
         }
         mFoucsView.setX(x - mFoucsView.getWidth() / 2);
         mFoucsView.setY(y - mFoucsView.getHeight() / 2);
