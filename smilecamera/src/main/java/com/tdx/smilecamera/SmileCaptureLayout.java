@@ -144,6 +144,7 @@ public class SmileCaptureLayout extends FrameLayout {
         btn_capture = new CaptureButton(getContext(), button_size);
         LayoutParams btn_capture_param = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
         btn_capture_param.gravity = Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL;
+        btn_capture_param.setMargins(0, 200, 0, 0);
         btn_capture.setLayoutParams(btn_capture_param);
         btn_capture.setCaptureLisenter(new CaptureListener() {
             @Override
@@ -290,10 +291,11 @@ public class SmileCaptureLayout extends FrameLayout {
         TextView txt_tip_one = new TextView(getContext());
         LayoutParams txt_param_one = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 //        txt_param.gravity = Gravity.CENTER_HORIZONTAL;
-        txt_param_one.setMargins(15, 0, 20, 0);
+        txt_param_one.setMargins(15, 10, 20, 0);
         txt_tip_one.setText("温馨提示：");
         txt_tip_one.setTextColor(0xFFFFFFFF);
-        txt_tip_one.setTextSize(12);
+        txt_tip_one.setTextSize(14);
+//        txt_tip_one.getPaint().setFakeBoldText(true);
         txt_tip_one.setGravity(Gravity.LEFT);
         txt_tip_one.setLayoutParams(txt_param_one);
 
@@ -302,8 +304,8 @@ public class SmileCaptureLayout extends FrameLayout {
         LayoutParams txt_param_two = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 //        txt_param.gravity = Gravity.CENTER_HORIZONTAL;
         txt_param_two.setMargins(15, 0, 20, 0);
-        txt_tip_two.setText("请保证光线充足、穿着整洁、露出脸部，不要佩戴任何物品，如帽子、眼睛。拍摄5s的视频");
-        txt_tip_two.setTextColor(0xFFFFFFFF);
+        txt_tip_two.setText("请保证光线充足、穿着整洁、露出脸部，不要佩戴任何物品，如帽子、眼睛。拍摄5s的视频。");
+        txt_tip_two.setTextColor(0x99FFFFFF);
         txt_tip_two.setTextSize(12);
         txt_tip_two.setGravity(Gravity.LEFT);
         txt_tip_two.setLayoutParams(txt_param_two);
@@ -355,6 +357,7 @@ public class SmileCaptureLayout extends FrameLayout {
 
     public void setDuration(int duration) {
         btn_capture.setDuration(duration);
+        btn_capture.setMinDuration(duration);
     }
 
     public void setButtonFeatures(int state) {

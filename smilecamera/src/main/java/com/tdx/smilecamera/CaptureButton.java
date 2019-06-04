@@ -40,8 +40,8 @@ public class CaptureButton extends View {
     public static final int STATE_RECORDERING = 0x004; //录制状态
     public static final int STATE_BAN = 0x005;         //禁止状态
 
-    private int progress_color = 0xEE16AE16;            //进度条颜色
-    private int outside_color = 0xEEDCDCDC;             //外圆背景色
+    private int progress_color = 0xFFFF4F7E;            //进度条颜色
+    private int outside_color = 0xFF969797;             //外圆背景色
     private int inside_color = 0xFFFFFFFF;              //内圆背景色
 
 
@@ -87,7 +87,7 @@ public class CaptureButton extends View {
         button_inside_radius = button_radius * 0.75f;
 
         strokeWidth = size / 15;
-        outside_add_size = size / 5;
+        outside_add_size = size / 8;
         inside_reduce_size = size / 8;
 
         mPaint = new Paint();
